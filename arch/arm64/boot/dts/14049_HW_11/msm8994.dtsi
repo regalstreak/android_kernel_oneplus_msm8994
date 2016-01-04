@@ -362,12 +362,12 @@
 			label = "modem_mem";
 		};
 
-/* #ifdef VENDOR_EDIT // add by xcb for ramoops 2015-03-31 */
+/* #ifdef VENDOR_EDIT // Reserve 1 mB for hardboot (regalstreak) */
 		ramoops_mem: ramoops_region@0 {
 			linux,reserve-contiguous-region;
-			oem,reserve-region;//modify by jiachenghui for ramoops reserve region
-			//linux,remove-completely;//del by jiachenghui for ramoops reserve region
-			reg = <0 0xac000000 0 0x00100000>;//modify from 0x05800000 to 0xac000000 by jiachenghui for ramoops reserve region
+			oem,reserve-region;
+			linux,remove-completely;
+			reg = <0 0xac000000 0 0x00200000>;
 			label = "ramoops_mem";
 		};
 /* #endif VENDOR_EDIT */
